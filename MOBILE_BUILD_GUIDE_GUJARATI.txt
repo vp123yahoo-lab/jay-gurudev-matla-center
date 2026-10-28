@@ -1,0 +1,18 @@
+માત્ર મોબાઇલથી APK બનાવવા માટેની રીત
+
+આ ZIP Android Studio પ્રોજેક્ટ છે. આ ફાઇલ પોતે APK નથી.
+
+1. ZIP ને Google Drive અથવા ફોનના Downloads માં રાખો.
+2. GitHub.com પર સાઇન ઇન/એકાઉન્ટ બનાવો.
+3. New repository બનાવો; નામ Jay-Gurudev-Matla-Center રાખી શકો. Public/Private પસંદ કરો.
+4. ફોનના બ્રાઉઝરમાં GitHub નું Desktop site ચાલુ કરો, repository માં Add file > Upload files પસંદ કરો.
+5. ZIP ને સીધી upload ન કરો. પહેલાં ZIP extract કરો, પછી અંદરના પ્રોજેક્ટના બધા ફોલ્ડર/ફાઇલો (ખાસ કરીને .github ફોલ્ડર સહિત) repository ના root માં upload કરો. જો મોબાઇલમાં hidden .github ફોલ્ડર દેખાતું ન હોય તો workflow file upload ન થઈ શકે.
+6. Commit changes કરો.
+7. Repository ના Actions ટેબમાં “Build Android APK” workflow ખોલો અને Run workflow દબાવો. Push પછી workflow આપમેળે પણ ચાલશે.
+8. Build સફળ થાય તો run ખોલો, નીચે Artifacts માં Jay-Gurudev-Matla-Center-APK ડાઉનલોડ કરો.
+9. ZIP artifact extract કરો; app-debug.apk મળશે. ફક્ત વિશ્વાસપાત્ર પોતાની repository માંથી આવેલ APK જ install કરો.
+
+મહત્વપૂર્ણ:
+- આ પ્રોજેક્ટ/Workflow અહીં Android પર build અથવા ફોન પર test કરેલો નથી; GitHub build સફળ થશે તેની ખાતરી નથી.
+- હાલની HTML એપના localStorage માં રહેલો ડેટા APK માં આપમેળે migrate નહીં થાય. જૂની એપ કાઢી નાખતાં પહેલાં જરૂરી હોય તો backup લો.
+- GitHub ના interface માં બદલાવ હોઈ શકે છે. Repository upload માં મુશ્કેલી આવે તો screenshot મોકલો.

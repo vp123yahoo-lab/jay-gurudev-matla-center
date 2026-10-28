@@ -1,0 +1,43 @@
+
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check project files
+        run: |
+          echo "Repository files:"
+          ls -la
+          echo "Checking Android Gradle project..."
+          test -f settings.gradle || test -f settings.gradle.kts
+          test -f gradlew
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Build APK
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Jay-Gurudev-Matla-Center-APK
+          path: app/build/outputs/apk/debug/*.apk
+
+          
